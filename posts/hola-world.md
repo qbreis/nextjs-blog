@@ -9,8 +9,13 @@ Testing pre code in blog:
 yarn add bulma
 ```
 
-```js
+```js {2, 4-6}
 const hola = 'world';
+a
+s
+d
+f
+g
 ```
 
 ```javascript
