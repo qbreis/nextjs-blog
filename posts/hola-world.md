@@ -18,6 +18,8 @@ f
 g
 ```
 
-```javascript
+```javascript {2}
 const hola = 'world';
+// comment 1
+// line 2 or 3 or 4
 ```
