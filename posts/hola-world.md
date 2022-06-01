@@ -9,7 +9,7 @@ Testing pre code in blog:
 yarn add bulma
 ```
 
-```js {2, 4-6}
+```js title="lolo"
 const hola = 'world';
 a
 s
