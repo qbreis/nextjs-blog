@@ -68,7 +68,7 @@ export default function Layout({ children, home }: any) {
         continue;
       }
 
-      pre.appendChild(createCopyButton(code));
+      //pre.appendChild(createCopyButton(code));
 
       const highlightRanges = pre.dataset.line;
       const lineNumbersContainer = pre.querySelector(".line-numbers-rows");

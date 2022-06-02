@@ -30,6 +30,27 @@ yarn add bulma
 
 ```
 
+```js[class="line-numbers"][class="hide-numbers"][data-line="2,4"]
+const Home: NextPage = () => {
+  return (
+    ...
+      <Head>
+        <title>Create Next App</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+      </Head>
+    ...
+```
+
+```css
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+```
+
+```scss
+$primary: #900; // Aquí se sobreescriben todas las variables que se quieran
+
+@import 'bulma/bulma.sass';
+```
+
 ```javascript {2}
 const hola = 'world';
 // comment 1
