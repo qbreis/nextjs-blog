@@ -59,19 +59,28 @@ export default function Layout({ children, home }: any) {
   }
 */
   useEffect(() => {
-    const allPres = rootRef.current?.querySelectorAll("pre");
-    const cleanup: (() => void)[] = [];
+    //const allPres = rootRef.current?.querySelectorAll("pre");
+    
+    foo:HTMLCollection;
+    const allPres = [].slice.call(
+      rootRef.current?.querySelectorAll("pre")
+    );
+    allPres:HTMLCollection;
 
+    const cleanup: (() => void)[] = [];
+    
     for (const pre of allPres) {
-      const code = pre.firstElementChild;
-      if (!code || !/code/i.test(code.tagName)) {
+      const code = pre['firstElementChild'];
+      if (!code || !/code/i.test(code['tagName'])) {
         continue;
       }
 
       //pre.appendChild(createCopyButton(code));
 
-      const highlightRanges = pre.dataset.line;
-      const lineNumbersContainer = pre.querySelector(".line-numbers-rows");
+      const highlightRanges = pre['dataset']['line'];
+      //const lineNumbersContainer = pre.querySelector('.line-numbers-rows');
+      const lineNumbersContainer = (pre as HTMLElement).querySelector('.line-numbers-rows');
+
 
       if (!highlightRanges || !lineNumbersContainer) {
         continue;
