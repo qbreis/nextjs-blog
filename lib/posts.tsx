@@ -74,7 +74,7 @@ export function getAllPostIds() {
     // Use remark to convert markdown into HTML string
     const processedContent = await remark()
       .use(html, { sanitize: false })
-      .use(prism)
+      .use(prism, { plugins: ["line-numbers"] })
       .process(matterResult.content);
     const contentHtml = processedContent.toString();
   

@@ -5,7 +5,13 @@ date: '2022-06-01'
 
 Testing pre code in blog:
 
-```bash
+```bash[class="line-numbers"]
+yarn add bulma
+yarn add bulma
+<span class="z">yarn add bulma</span>
+yarn add bulma
+yarn add bulma
+yarn add bulma
 yarn add bulma
 ```
 
