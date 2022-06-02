@@ -18,8 +18,8 @@ export default function Layout({ children, home }: any) {
 
   const rootRef = useRef<HTMLDivElement>(null);
 
-  function highlightCode(pre, highlightRanges, lineNumberRowsContainer) {
-    const ranges = highlightRanges.split(",").filter(val => val);
+  function highlightCode(pre : any, highlightRanges : any, lineNumberRowsContainer : any) {
+    const ranges = highlightRanges.split(",").filter((val: any) => val);
     const preWidth = pre.scrollWidth;
 
     for (const range of ranges) {
@@ -36,7 +36,7 @@ export default function Layout({ children, home }: any) {
       }
     }
   }
-
+/*
   function createCopyButton(codeEl) {
     const button = document.createElement("button");
     button.classList.add("prism-copy-button");
@@ -57,7 +57,7 @@ export default function Layout({ children, home }: any) {
 
     return button;
   }
-
+*/
   useEffect(() => {
     const allPres = rootRef.current?.querySelectorAll("pre");
     const cleanup: (() => void)[] = [];
