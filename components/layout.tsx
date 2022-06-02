@@ -69,30 +69,32 @@ export default function Layout({ children, home }: any) {
 
     const cleanup: (() => void)[] = [];
     
-    for (const pre of allPres) {
-      const code = pre['firstElementChild'];
-      if (!code || !/code/i.test(code['tagName'])) {
-        continue;
+    if(allPres){
+      for (const pre of allPres) {
+        const code = pre['firstElementChild'];
+        if (!code || !/code/i.test(code['tagName'])) {
+          continue;
+        }
+
+        //pre.appendChild(createCopyButton(code));
+
+        const highlightRanges = pre['dataset']['line'];
+        //const lineNumbersContainer = pre.querySelector('.line-numbers-rows');
+        const lineNumbersContainer = (pre as HTMLElement).querySelector('.line-numbers-rows');
+
+
+        if (!highlightRanges || !lineNumbersContainer) {
+          continue;
+        }
+
+        const runHighlight = () => highlightCode(pre, highlightRanges, lineNumbersContainer);
+        runHighlight();
+
+        const ro = new ResizeObserver(runHighlight);
+        ro.observe(pre);
+
+        cleanup.push(() => ro.disconnect());
       }
-
-      //pre.appendChild(createCopyButton(code));
-
-      const highlightRanges = pre['dataset']['line'];
-      //const lineNumbersContainer = pre.querySelector('.line-numbers-rows');
-      const lineNumbersContainer = (pre as HTMLElement).querySelector('.line-numbers-rows');
-
-
-      if (!highlightRanges || !lineNumbersContainer) {
-        continue;
-      }
-
-      const runHighlight = () => highlightCode(pre, highlightRanges, lineNumbersContainer);
-      runHighlight();
-
-      const ro = new ResizeObserver(runHighlight);
-      ro.observe(pre);
-
-      cleanup.push(() => ro.disconnect());
     }
 
     return () => cleanup.forEach(f => f());
