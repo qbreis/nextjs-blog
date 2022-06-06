@@ -2,10 +2,11 @@ import Layout from '../../components/Layout';
 import MetaData from '../../components/MetaData';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import Date from '../../components/Date';
+import nextConfig from '../../next.config';
 
 export default function Post({ postData }: any) {
   return (
-    <Layout>
+    <Layout siteTitle={nextConfig.siteTitle}>
       <MetaData title={postData.title} description={postData.excerpt} />
       <article>
         <h1>{postData.title}</h1>

@@ -75,7 +75,7 @@ export default function Layout({ children, home, siteTitle }: any) {
                     width={144}
                     alt={siteTitle}
                     />
-                    <h1>{siteTitle}</h1>
+                    <h1>{siteTitle} - home</h1>
                 </>
                 ) : (
                 <>
@@ -92,7 +92,7 @@ export default function Layout({ children, home, siteTitle }: any) {
                     </Link>
                     <h2>
                     <Link href="/">
-                        <a>{siteTitle}</a>
+                        <a>{siteTitle} -not home</a>
                     </Link>
                     </h2>
                 </>
