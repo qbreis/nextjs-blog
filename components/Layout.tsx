@@ -7,7 +7,7 @@ import nextConfig from '../next.config';
 const name = 'Your Name';
 
 export default function Layout({ children, home }: any) {
-
+    console.log(nextConfig)
     const rootRef = useRef<HTMLDivElement>(null);
 
     function highlightCode(pre : any, highlightRanges : any, lineNumberRowsContainer : any) {
