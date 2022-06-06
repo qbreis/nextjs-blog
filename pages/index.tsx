@@ -1,7 +1,5 @@
-import Head from 'next/head';
 import MetaData from '../components/MetaData';
 import Layout from '../components/Layout';
-import utilStyles from '../styles/utils.module.scss';
 
 import { getSortedPostsData } from '../lib/posts';
 
@@ -19,11 +17,8 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }: any) {
     return (
         <Layout home>
-            {/*<Head>
-                <title>{siteTitle}</title>
-            </Head>*/}
             <MetaData />
-            <section className={utilStyles.headingMd}>
+            <section>
                 <p>[Your Self Introductionss]</p>
                 <p>
                     (This is a sample website - you’ll be building a site like this on{' '}
@@ -31,8 +26,8 @@ export default function Home({ allPostsData }: any) {
                 </p>
             </section>
 
-            <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-                <h2 className={utilStyles.headingLg}>Blog</h2>
+            <section>
+                <h2>Blog</h2>
                 <Posts posts={allPostsData} />
             </section>
 

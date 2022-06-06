@@ -1,11 +1,6 @@
-import Head from 'next/head';
 import Image from 'next/image';
-import styles from './Layout.module.scss';
 import MetaData from './MetaData';
-import utilStyles from '../styles/utils.module.scss';
-
 import Link from 'next/link';
-
 import { useEffect, useRef } from "react";
 
 const name = 'Your Name';
@@ -113,7 +108,7 @@ export default function Layout({ children, home }: any) {
   
 
   return (
-    <div ref={rootRef} className="site-main container">
+    <div ref={rootRef} className="site-container container">
       <MetaData />
       {/*<Head>
         <link rel="icon" href="/favicon.ico" />
@@ -130,7 +125,7 @@ export default function Layout({ children, home }: any) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>*/}
-      <header className={styles.header}>
+      <header className="site-header">
         {home ? (
           <>
             <Image
