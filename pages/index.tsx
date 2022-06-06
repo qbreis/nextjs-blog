@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/Layout';
+import MetaData from '../components/MetaData';
+import Layout from '../components/Layout';
 import utilStyles from '../styles/utils.module.scss';
 
 import { getSortedPostsData } from '../lib/posts';
@@ -18,11 +19,12 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }: any) {
     return (
         <Layout home>
-            <Head>
+            {/*<Head>
                 <title>{siteTitle}</title>
-            </Head>
+            </Head>*/}
+            <MetaData />
             <section className={utilStyles.headingMd}>
-                <p>[Your Self Introduction]</p>
+                <p>[Your Self Introductionss]</p>
                 <p>
                     (This is a sample website - you’ll be building a site like this on{' '}
                     <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './Layout.module.scss';
+import MetaData from './MetaData';
 import utilStyles from '../styles/utils.module.scss';
 
 import Link from 'next/link';
@@ -8,7 +9,7 @@ import Link from 'next/link';
 import { useEffect, useRef } from "react";
 
 const name = 'Your Name';
-export const siteTitle = 'Next.js Sample Website';
+//export const siteTitle = 'Next.js Sample Website';
 
 export default function Layout({ children, home }: any) {
 
@@ -112,8 +113,9 @@ export default function Layout({ children, home }: any) {
   
 
   return (
-    <div ref={rootRef}>
-      <Head>
+    <div ref={rootRef} className="site-main container">
+      <MetaData />
+      {/*<Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
@@ -127,7 +129,7 @@ export default function Layout({ children, home }: any) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      </Head>*/}
       <header className={styles.header}>
         {home ? (
           <>
@@ -161,7 +163,7 @@ export default function Layout({ children, home }: any) {
           </>
         )}
       </header>
-      <main className="site-main container">{children}</main>
+      <main className="site-main">{children}</main>
       {!home && (
         <div>
           <Link href="/">

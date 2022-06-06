@@ -1,15 +1,13 @@
 import Layout from '../../components/Layout';
+import MetaData from '../../components/MetaData';
 import { getAllPostIds, getPostData } from '../../lib/posts';
-import Head from 'next/head';
 import Date from '../../components/Date';
 import utilStyles from '../../styles/utils.module.scss';
 
 export default function Post({ postData }: any) {
   return (
     <Layout>
-      <Head>
-        <title>{postData.title}</title>
-      </Head>
+      <MetaData title={postData.title} description={postData.excerpt} />
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <div className={utilStyles.lightText}>

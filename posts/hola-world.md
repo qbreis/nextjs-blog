@@ -1,5 +1,6 @@
 ---
 title: 'Hola world'
+excerpt: 'Excerpt test for hola mundo'
 date: '2022-06-01'
 ---
 
