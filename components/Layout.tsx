@@ -2,12 +2,9 @@ import Image from 'next/image';
 import MetaData from './MetaData';
 import Link from 'next/link';
 import { useEffect, useRef } from "react";
-import nextConfig from '../next.config';
 
-const name = 'Your Name';
+export default function Layout({ children, home, siteTitle }: any) {
 
-export default function Layout({ children, home }: any) {
-    console.log(nextConfig)
     const rootRef = useRef<HTMLDivElement>(null);
 
     function highlightCode(pre : any, highlightRanges : any, lineNumberRowsContainer : any) {
@@ -31,11 +28,11 @@ export default function Layout({ children, home }: any) {
   
     useEffect(() => {
 
-        //foo:HTMLCollection;
+        foo:HTMLCollection;
         const allPres = [].slice.call(
             rootRef.current?.querySelectorAll("pre")
         );
-        //allPres:HTMLCollection;
+        allPres:HTMLCollection;
 
         const cleanup: (() => void)[] = [];
     
@@ -76,9 +73,9 @@ export default function Layout({ children, home }: any) {
                     src="/images/profile.jpg"
                     height={144}
                     width={144}
-                    alt={name}
+                    alt={siteTitle}
                     />
-                    <h1>{name}</h1>
+                    <h1>{siteTitle}</h1>
                 </>
                 ) : (
                 <>
@@ -89,13 +86,13 @@ export default function Layout({ children, home }: any) {
                         src="/images/profile.jpg"
                         height={108}
                         width={108}
-                        alt={name}
+                        alt={siteTitle}
                         />
                     </a>
                     </Link>
                     <h2>
                     <Link href="/">
-                        <a>{name}</a>
+                        <a>{siteTitle}</a>
                     </Link>
                     </h2>
                 </>
