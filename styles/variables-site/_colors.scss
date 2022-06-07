@@ -1,17 +1,19 @@
-$color__background-body: #fff;
-$color__background-brand: #a0363d;
+$color__background-body: #ffffff;
+$color__background-brand: #3f9fc7;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
-$color__text-screen: #423b1a;
+$color__text-screen: rgb(76, 86, 106);
+// filter: invert(32%) sepia(7%) saturate(1349%) hue-rotate(182deg) brightness(97%) contrast(92%);
+
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: $color__background-brand;
-$color__link-visited: $color__background-brand;
-$color__link-hover: midnightblue;
+$color__link: $color__text-screen;
+$color__link-visited: $color__text-screen;
+$color__link-hover: $color__text-screen;
 $color__text-main: $color__text-screen;
 
 $color__border-button: #ccc #ccc #bbb;

@@ -1,5 +1,7 @@
 import Head from 'next/head';
 
+import nextConfig from '../next.config';
+
 const MetaData = ({title, description,}: any) => {
     return (
       <Head>
@@ -13,8 +15,8 @@ const MetaData = ({title, description,}: any) => {
 };
 
 MetaData.defaultProps = {
-    title: 'Qbreis - Enric Gatell',
-    description: 'This blog contains the step-by-step annotations of what I learn and consolidate, day by day, in terms of programming and web design, among other things.',
+    title: nextConfig.siteTitle,
+    description: nextConfig.siteDescription,
 }
 
 export default MetaData;

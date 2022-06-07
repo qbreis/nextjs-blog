@@ -1,0 +1,61 @@
+/**
+ * toggle menu for mobile devices
+ */
+
+a.btnCloseMenu:hover,
+a.btnMenu:hover {text-decoration:none;border:0;}
+.btnCloseMenu {
+    display:block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width:50px;
+    height:50px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    background-size: contain;
+}
+.btnMenu {
+    display:block;
+    position:fixed;
+    top:20px;
+    right:20px;
+    width:50px;
+    height:50px;
+    background-color:rgba(0,0,0,.5);
+    z-index:9001;
+}
+.menuToggle {
+    width: 100%;
+    height: 100% !important;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color:rgba(0,0,0,.8);
+    display: none;
+    z-index: 9000;
+}
+.menuToggle nav{
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: 100%;
+    text-align:center;
+    /***color:#fff;*/
+    display: table;
+}
+.menuToggle ul{
+    padding:0px;
+    margin:0px;
+                                            margin-top: 150px;
+    /*display: table-cell;
+    vertical-align: middle;*/
+}
+.menuToggle ul.sub-menu {
+    /*border:4px #00f solid;*/
+}
+.menuToggle ul.sub-menu li {
+    /*border:4px #f00 solid;*/
+    display: inline-block;
+    width: auto;
+}
