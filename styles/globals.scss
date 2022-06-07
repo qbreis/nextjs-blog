@@ -26,9 +26,24 @@
 //@import "../node_modules/bulma/sass/layout/hero.sass";
 //@import "../node_modules/bulma/sass/layout/section.sass";
 
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize/normalize";
 
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
 
 .container { max-width: $size__site-main; }
+
+
 
 
 
