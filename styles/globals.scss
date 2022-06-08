@@ -14,7 +14,7 @@
 
 //@import "../node_modules/bulma/sass/base/_all.sass";
 @import "../node_modules/bulma/sass/base/minireset";
-@import "../node_modules/bulma/sass/base/generic";
+//@import "../node_modules/bulma/sass/base/generic";
 
 //@import "../node_modules/bulma/sass/elements/button.sass";
 @import "../node_modules/bulma/sass/elements/container";
@@ -209,14 +209,14 @@ pre[class*="language-"] > code[class*="language-"] {
 @media print{.line-highlight{-webkit-print-color-adjust:exact;color-adjust:exact}}
 */
 
-pre[class*=language-]{
+//pre[class*=language-]{
+.remark-highlight{
     width: 100vw;
     position: relative;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    padding-right: 1em;padding-left: 1em;
 }
 
 /*** LINE NUMBERS **/

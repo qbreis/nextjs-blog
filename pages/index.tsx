@@ -21,11 +21,8 @@ export default function Home({ allPostsData }: any) {
         <Layout home siteTitle={nextConfig.siteTitle}>
             <MetaData />
             <section>
-                <p>[Your Self Introductionss]</p>
-                <p>
-                    (This is a sample website - you’ll be building a site like this on{' '}
-                    <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-                </p>
+                <p>Este blog contiene las anotaciones en primera persona, <em>paso a paso</em>, de todo lo que voy aprendiendo y consolidando, día a día, referente a programación y diseño web, entre otras cosas.</p>
+                <p>Muchas de estas anotaciones están relacionadas con su correspondiente repositorio git /* ¿<em>git</em> o <em>Git</em>? */.</p>
             </section>
 
             <section>

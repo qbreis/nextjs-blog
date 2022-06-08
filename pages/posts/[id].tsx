@@ -10,9 +10,7 @@ export default function Post({ postData }: any) {
       <MetaData title={postData.title} description={postData.excerpt} />
       <article>
         <h1>{postData.title}</h1>
-        <div>
-          <Date dateString={postData.date} />
-        </div>
+        <Date dateString={postData.date} />
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>

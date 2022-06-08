@@ -65,35 +65,35 @@ export default function Layout({ children, home, siteTitle }: any) {
     return (
         <div ref={rootRef} className="site-container container">
             <MetaData />
-            <header className="site-header">
+            <header className="site-header color-text-screen">
                 {home ? (
                 <>
                     <Image
                     priority
-                    src="/images/profile.jpg"
-                    height={144}
-                    width={144}
+                    src="/q-logo.svg"
+                    height={40}
+                    width={40}
                     alt={siteTitle}
                     />
-                    <h1>{siteTitle} - home</h1>
+                    <h1>{siteTitle}</h1>
                 </>
                 ) : (
                 <>
                     <Link href="/">
-                    <a>
-                        <Image
-                        priority
-                        src="/images/profile.jpg"
-                        height={108}
-                        width={108}
-                        alt={siteTitle}
-                        />
-                    </a>
+                        <a>
+                            <Image
+                            priority
+                            src="/q-logo.svg"
+                            height={40}
+                            width={40}
+                            alt={siteTitle}
+                            />
+                        </a>
                     </Link>
                     <h2>
-                    <Link href="/">
-                        <a>{siteTitle} -not home</a>
-                    </Link>
+                        <Link href="/">
+                            <a>{siteTitle}</a>
+                        </Link>
                     </h2>
                 </>
                 )}

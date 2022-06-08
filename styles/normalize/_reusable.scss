@@ -1,3 +1,10 @@
 .hidden {
     display: none;
 }
+
+.color-text-screen {
+    color: $color__text-screen;
+    img{
+        @include color__text-screen();
+    }
+}

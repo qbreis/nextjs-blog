@@ -43,20 +43,16 @@ template {
 }
 
 a {
-    /*background-color: transparent;
-    
-    
-    text-decoration: none;
-    border-bottom: 2px rgba(0, 0, 0, 0) solid;
-    
-    transition: all 0.35s;
-    */
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+    color: $color__text-main;
 }
 
 a:active,
 a:hover {
     outline: 0;
-    border-bottom: 3px $color__text-screen solid;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 3px;
 }
 
 abbr[title] {
