@@ -8,3 +8,7 @@
         @include color__text-screen();
     }
 }
+
+.font-size-xxs {
+    font-size: $font-size-xxs;
+}
