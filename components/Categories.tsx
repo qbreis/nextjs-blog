@@ -8,11 +8,9 @@ const Categories = ({categories}: any) => {
             Categorías: 
             {categories?.map((postCategory: any) => 
                 (
-
-                    <Link href={`/category/${postCategory}`}>
+                    <Link href={`/categories/${postCategory}`} key={`${postCategory}`}>
                         <a>{postCategory}</a>
                     </Link>
-
                 )
             )}
         </div>   
