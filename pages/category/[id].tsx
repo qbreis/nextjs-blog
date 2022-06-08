@@ -4,16 +4,10 @@ import { getAllPostIds, getPostData } from '../../lib/posts';
 import Date from '../../components/Date';
 import nextConfig from '../../next.config';
 
-export default function Post({ postData }: any) {
+export default function Category({ postData }: any) {
+    console.log(postData);
     return (
-        <Layout siteTitle={nextConfig.siteTitle}>
-            <MetaData title={postData.title} description={postData.excerpt} />
-            <article>
-                <h1>{postData.title}</h1>
-                <Date dateString={postData.date} />
-                <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-            </article>
-        </Layout>
+        <>Category</>
     );
 }
 

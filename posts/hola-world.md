@@ -2,6 +2,9 @@
 title: 'Hola world'
 excerpt: 'Excerpt test for hola mundo'
 date: '2022-06-01'
+categories: ['next.js']
+tags: ['next.js', 'bulma']
+draft: true
 ---
 
 Testing pre code in blog:
