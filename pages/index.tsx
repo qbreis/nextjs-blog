@@ -24,7 +24,7 @@ export default function Home({ allPostsData }: any) {
                 <h2 className="h1">En primera persona</h2>
                 <div className="entry-meta">
 				    <span className="posted-on">
-                        <time className="entry-date published">2022-05-23</time>
+                        <time className="entry-date published">2022-06-08</time>
                     </span>
                 </div>
                 <p>Este blog contiene las anotaciones en primera persona, <em>paso a paso</em>, de todo lo que voy aprendiendo y consolidando, día a día, referente a programación y diseño web, entre otras cosas.</p>
