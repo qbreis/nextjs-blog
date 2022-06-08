@@ -1,11 +1,15 @@
 import Layout from '../../components/Layout';
 import MetaData from '../../components/MetaData';
 import { getAllPostIds, getPostData } from '../../lib/posts';
+import { getAllCategoryIds } from '../../lib/categories';
 import Date from '../../components/Date';
 import nextConfig from '../../next.config';
 
-export default function Category({ postData }: any) {
-    console.log(postData);
+export default function Category({ categoryData }: any) {
+    //console.log(categoryData);
+
+    const paths = getAllCategoryIds();
+    console.log(paths);
     return (
         <>Category</>
     );
@@ -18,12 +22,12 @@ export async function getStaticPaths() {
         fallback: false,
     };
 }
-  
+
 export async function getStaticProps({ params }: any) {
-    const postData = await getPostData(params.id);
+    const categoryData = await getPostData(params.id);
     return {
         props: {
-            postData,
+            categoryData,
         },
     };
 }
