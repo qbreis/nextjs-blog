@@ -4,9 +4,12 @@ import { getAllPostIds, getPostData, getAllCategoryIds, getPostsByCategory } fro
 import Date from '../../components/Date';
 import nextConfig from '../../next.config';
 
+import Posts from '../../components/Posts';
+
 export default function Category({ postData }: any) {
-    console.log('postData');
-    console.log(postData);
+    
+    console.log('postData.postsByCategory');
+    console.log(postData.postsByCategory);
     return (
         <Layout siteTitle={nextConfig.siteTitle}>
             <MetaData title={postData.title} description={postData.excerpt} />
