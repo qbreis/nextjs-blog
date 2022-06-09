@@ -119,3 +119,11 @@ export function getAllCategoryIds() {
         };
     });
 }
+
+export function getPostsByCategory(id: any) {
+    //const fileNames = fs.readdirSync(postsDirectory);
+    
+    return {
+        test: 'test '+id
+    };
+}
