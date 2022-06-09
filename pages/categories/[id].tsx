@@ -7,7 +7,7 @@ import nextConfig from '../../next.config';
 export default function Category({ postData }: any) {
     //console.log(postData);
     return (
-        (postData.id) ? <>Category {postData.id}</> : <>List all categories</>
+        <>Category {postData.id}</>
     );
 }
 
