@@ -85,4 +85,37 @@ export async function getPostData(id: any) {
         ...matterResult.data,
     };
 }
-  
+
+export function getAllCategoryIds() {
+    // Get file names under /posts
+    const fileNames = fs.readdirSync(postsDirectory);
+
+    const categories: any = [];
+
+    const allPostsData = fileNames.map((fileName) => {
+        // Remove ".md" from file name to get id
+        const id = fileName.replace(/\.md$/, '');
+
+        // Read markdown file as string
+        const fullPath = path.join(postsDirectory, fileName);
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+
+        // Use gray-matter to parse the post metadata section
+        const matterResult = matter(fileContents);
+
+        const postCategories = matterResult.data.categories.map((postCategory: any) => {
+            if(!categories.includes(postCategory)){
+                categories.push(postCategory);
+            }
+        })
+
+    });
+
+    return categories.map((category: any) => {
+        return {
+            params: {
+                id: category,
+            },
+        };
+    });
+}

@@ -2,8 +2,8 @@
 title: 'Hola world'
 excerpt: 'Excerpt test for hola mundo'
 date: '2022-06-01'
-categories: ['next.js']
-tags: ['next.js', 'bulma']
+categories: ['nextjs']
+tags: ['dos', 'tres']
 draft: true
 ---
 
