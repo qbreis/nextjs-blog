@@ -7,9 +7,11 @@ import prism from 'remark-prism';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
+// Get file names under /posts
+const fileNames = fs.readdirSync(postsDirectory);
+
 export function getSortedPostsData() {
-    // Get file names under /posts
-    const fileNames = fs.readdirSync(postsDirectory);
+    
     const allPostsData = fileNames.map((fileName) => {
         // Remove ".md" from file name to get id
         const id = fileName.replace(/\.md$/, '');
@@ -40,7 +42,7 @@ export function getSortedPostsData() {
 }
 
 export function getAllPostIds() {
-    const fileNames = fs.readdirSync(postsDirectory);
+
   
     // Returns an array that looks like this:
     // [
@@ -87,8 +89,7 @@ export async function getPostData(id: any) {
 }
 
 export function getAllCategoryIds() {
-    // Get file names under /posts
-    const fileNames = fs.readdirSync(postsDirectory);
+
 
     const categories: any = [];
 
@@ -124,6 +125,6 @@ export function getPostsByCategory(id: any) {
     //const fileNames = fs.readdirSync(postsDirectory);
     
     return {
-        test: 'test '+id
+        test: 'list all posts with category: '+id
     };
 }
