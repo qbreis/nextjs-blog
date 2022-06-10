@@ -10,7 +10,7 @@ const postsDirectory = path.join(process.cwd(), 'posts');
 // Get file names under /posts
 const fileNames = fs.readdirSync(postsDirectory);
 
-export function getSortedPostsData() {
+export function getSortedPostsData(categoryId?: any) { // make optional parameter categoryId?
     
     const allPostsData = fileNames.map((fileName) => {
         // Remove ".md" from file name to get id
@@ -24,10 +24,27 @@ export function getSortedPostsData() {
         const matterResult = matter(fileContents);
 
         // Combine the data with the id
-        return {
+        /*return {
+            id,
+            ...matterResult.data,
+        };*/
+
+        
+        return (
+            !categoryId // If no category is specified get all posts
+            ||
+            (
+                categoryId // If category specified...
+                &&
+                matterResult.data.categories.includes(categoryId)) // ... get only posts with this category
+        )
+        &&
+        // Combine the data with the id
+        {
             id,
             ...matterResult.data,
         };
+
     });
     // Sort posts by date
     return allPostsData.sort(({ date: a }: any, { date: b }: any) => {
@@ -119,48 +136,6 @@ export function getAllCategoryIds() {
             },
         };
     });
-}
-
-export function getSortedPostsData2(categoryId: any) {
-    
-    const allPostsData = fileNames.map((fileName) => {
-        // Remove ".md" from file name to get id
-        const id = fileName.replace(/\.md$/, '');
-
-        // Read markdown file as string
-        const fullPath = path.join(postsDirectory, fileName);
-        const fileContents = fs.readFileSync(fullPath, 'utf8');
-
-        // Use gray-matter to parse the post metadata section
-        const matterResult = matter(fileContents);
-/*
-        let flag = 0;
-        const postCategories = matterResult.data.categories.map((postCategory: any) => {
-            if(postCategory === categoryId){
-                flag = 1;
-            }
-        });
-*/
-        // Combine the data with the id
-        return (matterResult.data.categories.includes(categoryId)) && {
-            id,
-            ...matterResult.data,
-        };
-        
-    });
-    // Sort posts by date
-    /*
-    return allPostsData.sort(({ date: a }: any, { date: b }: any) => {
-        if (a < b) {
-            return 1;
-        } else if (a > b) {
-            return -1;
-        } else {
-            return 0;
-        }
-    });
-    */
-   return allPostsData;
 }
 
 /*

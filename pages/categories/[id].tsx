@@ -1,6 +1,6 @@
 import Layout from '../../components/Layout';
 import MetaData from '../../components/MetaData';
-import { getAllPostIds, getPostData, getAllCategoryIds, getSortedPostsData2 } from '../../lib/posts';
+import { getAllPostIds, getPostData, getAllCategoryIds, getSortedPostsData } from '../../lib/posts';
 import Date from '../../components/Date';
 import nextConfig from '../../next.config';
 
@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 }
   
 export async function getStaticProps({ params }: any) {
-    const allPostsData = getSortedPostsData2(params.id);
+    const allPostsData = getSortedPostsData(params.id);
     const postsByCategoryData = {
         id: params.id,
         allPostsData,
