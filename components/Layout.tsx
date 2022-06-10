@@ -68,14 +68,22 @@ export default function Layout({ children, home, siteTitle }: any) {
             <header className="site-header color-text-screen">
                 {home ? (
                 <>
-                    <Image
-                    priority
-                    src="/q-logo.svg"
-                    height={40}
-                    width={40}
-                    alt={siteTitle}
-                    />
-                    <h1>{siteTitle}</h1>
+                    <Link href="/">
+                        <a>
+                            <Image
+                            priority
+                            src="/q-logo.svg"
+                            height={40}
+                            width={40}
+                            alt={siteTitle}
+                            />
+                        </a>
+                    </Link>
+                    <h1>
+                        <Link href="/">
+                            <a>{siteTitle}</a>
+                        </Link>
+                    </h1>
                 </>
                 ) : (
                 <>
