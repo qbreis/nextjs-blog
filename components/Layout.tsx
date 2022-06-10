@@ -67,43 +67,35 @@ export default function Layout({ children, home, siteTitle }: any) {
             <MetaData />
             <header className="site-header color-text-screen">
                 {home ? (
-                <>
-                    <Link href="/">
-                        <a>
-                            <Image
-                            priority
-                            src="/q-logo.svg"
-                            height={40}
-                            width={40}
-                            alt={siteTitle}
-                            />
-                        </a>
-                    </Link>
-                    <h1>
+                    <>
+                        <Image
+                        priority
+                        src="/q-logo.svg"
+                        height={40}
+                        width={40}
+                        alt={siteTitle}
+                        />
+                        <h1>{siteTitle}</h1>
+                    </>
+                    ) : (
+                    <>
                         <Link href="/">
-                            <a>{siteTitle}</a>
+                            <a>
+                                <Image
+                                priority
+                                src="/q-logo.svg"
+                                height={40}
+                                width={40}
+                                alt={siteTitle}
+                                />
+                            </a>
                         </Link>
-                    </h1>
-                </>
-                ) : (
-                <>
-                    <Link href="/">
-                        <a>
-                            <Image
-                            priority
-                            src="/q-logo.svg"
-                            height={40}
-                            width={40}
-                            alt={siteTitle}
-                            />
-                        </a>
-                    </Link>
-                    <h2>
-                        <Link href="/">
-                            <a>{siteTitle}</a>
-                        </Link>
-                    </h2>
-                </>
+                        <h2>
+                            <Link href="/">
+                                <a>{siteTitle}</a>
+                            </Link>
+                        </h2>
+                    </>
                 )}
             </header>
             <main className="site-main">{children}</main>
