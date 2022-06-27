@@ -36,7 +36,8 @@ export function getSortedPostsData(categoryId?: any) { // make optional paramete
             (
                 categoryId // If category specified...
                 &&
-                matterResult.data.categories.includes(categoryId)) // ... get only posts with this category
+                matterResult.data.categories.includes(categoryId) // ... get only posts with this category
+            )
         )
         &&
         // Combine the data with the id
