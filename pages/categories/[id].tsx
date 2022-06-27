@@ -9,7 +9,7 @@ import Posts from '../../components/Posts';
 export default function Category({ postsByCategoryData }: any) {
 
     return (
-        <Layout home siteTitle={nextConfig.siteTitle}>
+        <Layout siteTitle={nextConfig.siteTitle}>
             <MetaData />
             <h2 className="h1">Categoría: {postsByCategoryData.id}</h2>
             
