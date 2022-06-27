@@ -28,7 +28,7 @@ export default function Home({ allPostsData }: any) {
                     </span>
                 </div>
                 <p>Este blog contiene las anotaciones en primera persona, <em>paso a paso</em>, de todo lo que voy aprendiendo y consolidando, día a día, referente a programación y diseño web, entre otras cosas.</p>
-                <p>Muchas de estas anotaciones están relacionadas con su correspondiente repositorio git /* ¿<em>git</em> o <em>Git</em>? */.</p>
+                <p>Muchas de estas anotaciones están relacionadas con su correspondiente repositorio Git.</p>
             </section>
 
             <section className="all-post-data">
