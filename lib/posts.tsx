@@ -106,8 +106,8 @@ export async function getPostData(id: any) {
     };
 }
 
-export function getAllCategoryIds() {
 
+export function getAllCategoryIds() {
 
     const categories: any = [];
 
@@ -130,14 +130,25 @@ export function getAllCategoryIds() {
 
     });
 
-    return categories.map((category: any) => {
+    const categoriesResult = categories.map((category: any) => {
+
         return {
             params: {
                 id: category,
+                posts: getSortedPostsData(category).length,
             },
         };
     });
+
+
+    return categoriesResult;
+
 }
+
+
+
+
+
 
 /*
 export function getPostsByCategory(id: any) {
