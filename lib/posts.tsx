@@ -11,6 +11,8 @@ const postsDirectory = path.join(process.cwd(), 'posts');
 const fileNames = fs.readdirSync(postsDirectory);
 
 export function getSortedPostsData(categoryId?: any) { // make optional parameter categoryId?
+
+    const allPostsDataResult: any = [];
     
     const allPostsData = fileNames.map((fileName) => {
         // Remove ".md" from file name to get id
@@ -30,7 +32,7 @@ export function getSortedPostsData(categoryId?: any) { // make optional paramete
         };*/
 
         
-        return (
+        if(
             !categoryId // If no category is specified get all posts
             ||
             (
@@ -38,17 +40,16 @@ export function getSortedPostsData(categoryId?: any) { // make optional paramete
                 &&
                 matterResult.data.categories.includes(categoryId) // ... get only posts with this category
             )
-        )
-        &&
-        // Combine the data with the id
-        {
-            id,
-            ...matterResult.data,
-        };
+        ){
+            allPostsDataResult.push({
+                id,
+                ...matterResult.data,
+            });
+        }
 
     });
     // Sort posts by date
-    return allPostsData.sort(({ date: a }: any, { date: b }: any) => {
+    return allPostsDataResult.sort(({ date: a }: any, { date: b }: any) => {
         if (a < b) {
             return 1;
         } else if (a > b) {
