@@ -1,0 +1,40 @@
+@font-face {
+    font-family: Mallory;
+    src: url(/../fonts/Mallory-Book-1311291b66a9945865aa60201ee69d16.woff)
+        format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: Mallory;
+    src: url(/../fonts/Mallory-Book-Italic-5927c367a70504f104583bb750810020.woff)
+        format("woff");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: Mallory;
+    src: url(/../fonts/Mallory-Bold-8c256832f93587887957c886c76cf0cd.woff)
+        format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: Mallory Condensed;
+    src: url(/../fonts/MalloryCond-Book-d62f3f91ed3807dcd5a5fbda0352639a.woff)
+        format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: Mallory Condensed;
+    src: url(/../fonts/MalloryCond-Bold-0ae4c7e98f395ec6422238c2f8f380ba.woff)
+        format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
