@@ -140,10 +140,7 @@ export function getAllCategoryIds() {
 }
 
 /*
-export function getPostsByCategory(id: any) {
-    //const fileNames = fs.readdirSync(postsDirectory);
-    
-    const CategoryId = id;
+export function getAllCategoryIds() {
 
     const categories: any = [];
 
@@ -158,13 +155,43 @@ export function getPostsByCategory(id: any) {
         // Use gray-matter to parse the post metadata section
         const matterResult = matter(fileContents);
 
-        // Combine the data with the id
-        return {
-            id,
-            ...matterResult.data,
-        };
+        const postCategories = matterResult.data.categories.map((postCategory: any) => {
+            if(!categories.includes(postCategory)){
+                categories.push(postCategory);
+            }
+        })
 
     });
+
+    const categoriesResult = categories.map((category: any) => {
+        return {
+            id: category,
+            posts: getSortedPostsData(category).length,
+        };
+    });
+
+    categoriesResult.sort(({ posts: a }: any, { posts: b }: any) => {
+        if (a < b) {
+            return 1;
+        } else if (a > b) {
+            return -1;
+        } else {
+            return 0;
+        }
+    });
+
+    categoriesResult.map((category: any) => {
+        return {
+            params: {
+                id: category.id,
+                posts: category.posts,
+            },
+        };
+    });
+
+    return categoriesResult;
+}
+
 
 
 
