@@ -155,13 +155,16 @@ export function getSortedCategories() {
             }
         });
     });
+    console.log(categories);
 
     const categoriesResult = categories.map((category: any) => {
+        console.log(getSortedPostsData(category));
         return {
             id: category,
             posts: getSortedPostsData(category).length,
         };
     });
+    console.log(categoriesResult);
 
     categoriesResult.sort(({ posts: a }: any, { posts: b }: any) => {
         if (a < b) {
@@ -183,7 +186,7 @@ export function getSortedCategories() {
     });
 
     return categoriesResult;
-    
+
 }
 /*
 export function getAllCategoryIds() {
