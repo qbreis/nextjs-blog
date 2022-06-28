@@ -4,8 +4,7 @@ const Categories = ({categories}: any) => {
         return <></>
     }
     return (
-        <div style={{border: '2px #f00 solid'}}>
-            Categorías: 
+        <div className="post-categories">
             {categories?.map((postCategory: any) => 
                 (
                     <Link href={`/categories/${postCategory}`} key={`${postCategory}`}>

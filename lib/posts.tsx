@@ -7,9 +7,11 @@ import prism from 'remark-prism';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
-export function getSortedPostsData() {
-    // Get file names under /posts
-    const fileNames = fs.readdirSync(postsDirectory);
+// Get file names under /posts
+const fileNames = fs.readdirSync(postsDirectory);
+
+export function getSortedPostsData(categoryId?: any) { // make optional parameter categoryId?
+    
     const allPostsData = fileNames.map((fileName) => {
         // Remove ".md" from file name to get id
         const id = fileName.replace(/\.md$/, '');
@@ -22,10 +24,28 @@ export function getSortedPostsData() {
         const matterResult = matter(fileContents);
 
         // Combine the data with the id
-        return {
+        /*return {
+            id,
+            ...matterResult.data,
+        };*/
+
+        
+        return (
+            !categoryId // If no category is specified get all posts
+            ||
+            (
+                categoryId // If category specified...
+                &&
+                matterResult.data.categories.includes(categoryId) // ... get only posts with this category
+            )
+        )
+        &&
+        // Combine the data with the id
+        {
             id,
             ...matterResult.data,
         };
+
     });
     // Sort posts by date
     return allPostsData.sort(({ date: a }: any, { date: b }: any) => {
@@ -40,7 +60,7 @@ export function getSortedPostsData() {
 }
 
 export function getAllPostIds() {
-    const fileNames = fs.readdirSync(postsDirectory);
+
   
     // Returns an array that looks like this:
     // [
@@ -85,4 +105,70 @@ export async function getPostData(id: any) {
         ...matterResult.data,
     };
 }
-  
+
+export function getAllCategoryIds() {
+
+
+    const categories: any = [];
+
+    const allPostsData = fileNames.map((fileName) => {
+        // Remove ".md" from file name to get id
+        const id = fileName.replace(/\.md$/, '');
+
+        // Read markdown file as string
+        const fullPath = path.join(postsDirectory, fileName);
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+
+        // Use gray-matter to parse the post metadata section
+        const matterResult = matter(fileContents);
+
+        const postCategories = matterResult.data.categories.map((postCategory: any) => {
+            if(!categories.includes(postCategory)){
+                categories.push(postCategory);
+            }
+        })
+
+    });
+
+    return categories.map((category: any) => {
+        return {
+            params: {
+                id: category,
+            },
+        };
+    });
+}
+
+/*
+export function getPostsByCategory(id: any) {
+    //const fileNames = fs.readdirSync(postsDirectory);
+    
+    const CategoryId = id;
+
+    const categories: any = [];
+
+    const allPostsData = fileNames.map((fileName) => {
+        // Remove ".md" from file name to get id
+        const id = fileName.replace(/\.md$/, '');
+
+        // Read markdown file as string
+        const fullPath = path.join(postsDirectory, fileName);
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+
+        // Use gray-matter to parse the post metadata section
+        const matterResult = matter(fileContents);
+
+        // Combine the data with the id
+        return {
+            id,
+            ...matterResult.data,
+        };
+
+    });
+
+
+
+
+
+}
+*/

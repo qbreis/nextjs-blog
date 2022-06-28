@@ -1,18 +1,29 @@
 import Layout from '../../components/Layout';
 import MetaData from '../../components/MetaData';
-import { getAllPostIds, getPostData } from '../../lib/posts';
+import { getAllPostIds, getPostData, getAllCategoryIds, getSortedPostsData } from '../../lib/posts';
 import Date from '../../components/Date';
 import nextConfig from '../../next.config';
 
-export default function Category({ postData }: any) {
-    console.log(postData);
+import Posts from '../../components/Posts';
+
+export default function Category({ postsByCategoryData }: any) {
+
     return (
-        <>Category</>
+        <Layout siteTitle={nextConfig.siteTitle}>
+            <MetaData />
+            <h2 className="h1">Categoría: {postsByCategoryData.id}</h2>
+            
+            <section className="all-post-data">
+                <Posts posts={postsByCategoryData.allPostsData} />
+            </section>
+
+        </Layout>
     );
 }
 
 export async function getStaticPaths() {
-    const paths = getAllPostIds();
+    const paths = getAllCategoryIds();
+    // console.log('paths', paths)
     return {
         paths,
         fallback: false,
@@ -20,10 +31,14 @@ export async function getStaticPaths() {
 }
   
 export async function getStaticProps({ params }: any) {
-    const postData = await getPostData(params.id);
+    const allPostsData = getSortedPostsData(params.id);
+    const postsByCategoryData = {
+        id: params.id,
+        allPostsData,
+    }
     return {
         props: {
-            postData,
+            postsByCategoryData
         },
     };
 }

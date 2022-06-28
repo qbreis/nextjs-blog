@@ -2,6 +2,7 @@ import Layout from '../../components/Layout';
 import MetaData from '../../components/MetaData';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import Date from '../../components/Date';
+import Categories from '../../components/Categories';
 import nextConfig from '../../next.config';
 
 export default function Post({ postData }: any) {
@@ -10,7 +11,10 @@ export default function Post({ postData }: any) {
             <MetaData title={postData.title} description={postData.excerpt} />
             <article>
                 <h1>{postData.title}</h1>
-                <Date dateString={postData.date} />
+                <div className="entry-meta">
+                    <Date dateString={postData.date} />
+                    <Categories categories={postData.categories} />
+                </div>
                 <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </article>
         </Layout>

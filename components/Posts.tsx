@@ -13,8 +13,8 @@ const Posts = ({posts}: any) => {
 
             {posts.map((post: any) => 
             {
-                console.log(post.categories);
-                return (
+                console.log(post);
+                return (post.id) && (
                     <li key={post.id}>
                         <h2 className="h4">
                             <Link href={`/posts/${post.id}`}>
