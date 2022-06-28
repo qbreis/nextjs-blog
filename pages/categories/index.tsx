@@ -5,14 +5,18 @@ import { getAllPostIds, getPostData, getAllCategoryIds, getSortedPostsData } fro
 
 export default function catHome({ allCategoryIds }: any) {
     //const aux = getAllPostIds();
-    console.log(allCategoryIds);
+    //console.log(allCategoryIds);
     return (
         <Layout siteTitle={nextConfig.siteTitle}>
             <MetaData />
-            <h2 className="h1">List of categories</h2>
+            <h2 className="h1">List of categories ({allCategoryIds.length} categories)</h2>
             
             <section className="all-post-data">
-                ...
+                {allCategoryIds.map((categoryId: any) => 
+                    {
+                        return(<p>{categoryId.params.id} ({categoryId.params.posts} posts)</p>);
+                    }
+                )}
             </section>
 
         </Layout>

@@ -12,6 +12,8 @@ const fileNames = fs.readdirSync(postsDirectory);
 
 export function getSortedPostsData(categoryId?: any) { // make optional parameter categoryId?
     
+    const allPostsDataResult: any = [];
+
     const allPostsData = fileNames.map((fileName) => {
         // Remove ".md" from file name to get id
         const id = fileName.replace(/\.md$/, '');
@@ -29,8 +31,7 @@ export function getSortedPostsData(categoryId?: any) { // make optional paramete
             ...matterResult.data,
         };*/
 
-        
-        return (
+        if(
             !categoryId // If no category is specified get all posts
             ||
             (
@@ -38,17 +39,20 @@ export function getSortedPostsData(categoryId?: any) { // make optional paramete
                 &&
                 matterResult.data.categories.includes(categoryId) // ... get only posts with this category
             )
-        )
-        &&
-        // Combine the data with the id
-        {
-            id,
-            ...matterResult.data,
-        };
+        ){
+            allPostsDataResult.push({
+                id,
+                ...matterResult.data,
+            });
+        }
+        
+
 
     });
+
+
     // Sort posts by date
-    return allPostsData.sort(({ date: a }: any, { date: b }: any) => {
+    return allPostsDataResult.sort(({ date: a }: any, { date: b }: any) => {
         if (a < b) {
             return 1;
         } else if (a > b) {
@@ -108,7 +112,6 @@ export async function getPostData(id: any) {
 
 export function getAllCategoryIds() {
 
-
     const categories: any = [];
 
     const allPostsData = fileNames.map((fileName) => {
@@ -130,13 +133,40 @@ export function getAllCategoryIds() {
 
     });
 
-    return categories.map((category: any) => {
+    const categoriesResult = categories.map((category: any) => {
+        
+        /*
+        console.log('category: '+category);
+        const aux = getSortedPostsData(category);
+        console.log(aux);
+        console.log('Number of posts is '+aux.length);
+        */
         return {
             params: {
                 id: category,
+                posts: getSortedPostsData(category).length,
             },
         };
     });
+
+
+    return categoriesResult;
+    /*
+    // Sort categories by number of posts
+    console.log(categoriesResult.params);
+    return categoriesResult.sort(({ posts: a }: any, { posts: b }: any) => {
+        console.log(categoriesResult+'...'+a+' --- '+b);
+        console.log(`Comparing ${a} to ${b}`);
+        if (a < b) {
+            return 1;
+        } else if (a > b) {
+            return -1;
+        } else {
+            return 0;
+        }
+    });
+
+    */
 }
 
 /*
