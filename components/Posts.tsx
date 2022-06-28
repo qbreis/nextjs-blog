@@ -13,7 +13,7 @@ const Posts = ({posts}: any) => {
 
             {posts.map((post: any) => 
             {
-                console.log(post);
+                //console.log(post);
                 return (post.id) && (
                     <li key={post.id}>
                         <h2 className="h4">

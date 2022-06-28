@@ -1,7 +1,8 @@
 import Layout from '../../components/Layout';
 import MetaData from '../../components/MetaData';
 import nextConfig from '../../next.config';
-import { getAllPostIds, getPostData, getAllCategoryIds, getSortedPostsData } from '../../lib/posts';
+import { getSortedCategories } from '../../lib/posts';
+import Link from 'next/link';
 
 export default function catHome({ allCategoryIds }: any) {
     //const aux = getAllPostIds();
@@ -12,7 +13,23 @@ export default function catHome({ allCategoryIds }: any) {
             <h2 className="h1">List of categories</h2>
             
             <section className="all-post-data">
-                ...
+                <ul>
+
+
+                {allCategoryIds?.map((postCategory: any) => 
+                    (
+                        <li key={`${postCategory.id}`}>
+                            <h2 className="h4">
+                            <Link href={`/categories/${postCategory.id}`}>
+                                <a>{postCategory.id} - ({postCategory.posts} anotaciones)</a>
+                            </Link>
+                            </h2>
+                        </li>
+                    )
+                )}
+
+
+                </ul>
             </section>
 
         </Layout>
@@ -20,7 +37,7 @@ export default function catHome({ allCategoryIds }: any) {
 }
 
 export async function getStaticProps() {
-    const allCategoryIds = getAllCategoryIds();
+    const allCategoryIds = getSortedCategories();
     return {
         props: {
             allCategoryIds
