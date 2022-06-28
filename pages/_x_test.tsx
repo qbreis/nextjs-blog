@@ -1,4 +1,4 @@
-import { allPostsData } from '../lib/blog';
+import { allPostsData } from '../lib/_x_blog';
 
 export async function getStaticProps({ params }: any) {
     const postData = {
