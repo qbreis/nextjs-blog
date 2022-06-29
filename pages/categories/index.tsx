@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function catHome({ allCategoryIds }: any) {
     //const aux = getAllPostIds();
-    console.log(allCategoryIds);
+    //console.log(allCategoryIds);
     return (
         <Layout siteTitle={nextConfig.siteTitle}>
             <MetaData />

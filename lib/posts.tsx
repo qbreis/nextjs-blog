@@ -156,16 +156,16 @@ export function getSortedCategories() {
             }
         });
     });
-    console.log(categories);
+    //console.log(categories);
 
     const categoriesResult = categories.map((category: any) => {
-        console.log(getSortedPostsData(category));
+        //console.log(getSortedPostsData(category));
         return {
             id: category,
             posts: getSortedPostsData(category).length,
         };
     });
-    console.log(categoriesResult);
+    //console.log(categoriesResult);
 
     categoriesResult.sort(({ posts: a }: any, { posts: b }: any) => {
         if (a < b) {

@@ -25,7 +25,7 @@ export default function Document(props: any) {
                     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
                     rel="stylesheet"
                 />
-                <link href='static-styles.css' rel="stylesheet" />
+                
             </Head>
             <body>
                 <Main />
