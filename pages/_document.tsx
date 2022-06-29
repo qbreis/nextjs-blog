@@ -1,7 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-import { useRouter } from 'next/router';
+//import { useRouter } from 'next/router';
 
-export default function Document() {
+export default function Document(props: any) {
     /*
     const router = useRouter();
     const routerAsPath = router.asPath;
