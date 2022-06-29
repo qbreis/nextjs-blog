@@ -10,6 +10,7 @@ const MetaData = ({title, description,}: any) => {
         <meta charSet='utf-8' />
         <link rel='icon' href='/favicon.png' />
         <title>{title}</title>
+        {/*
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -21,6 +22,7 @@ const MetaData = ({title, description,}: any) => {
           rel="stylesheet"
         />
         <link href="static-styles.css" rel="stylesheet" />
+        */}
       </Head>
     );
 };
