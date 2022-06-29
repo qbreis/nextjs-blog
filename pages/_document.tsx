@@ -23,7 +23,7 @@ export default function Document() {
                     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
                     rel="stylesheet"
                 />
-                <link href={staticStylesCss} rel="stylesheet" />
+                <link href='static-styles.css' rel="stylesheet" />
             </Head>
             <body>
                 <Main />
