@@ -21,6 +21,7 @@ const MetaData = ({title, description,}: any) => {
             <meta charSet='utf-8' />
             <link rel='icon' href='/favicon.png' />
             <title>{title}</title>
+            {/*
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link
                 rel="preconnect"
@@ -31,6 +32,7 @@ const MetaData = ({title, description,}: any) => {
                   href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
                   rel="stylesheet"
             />
+            */}
             <link href={staticStylesCss} rel="stylesheet" />
         </Head>
     );
