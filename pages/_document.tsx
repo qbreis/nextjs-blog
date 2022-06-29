@@ -2,6 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 import { useRouter } from 'next/router';
 
 export default function Document() {
+    /*
     const router = useRouter();
     const routerAsPath = router.asPath;
     const pathToRootArray = routerAsPath.split('/');
@@ -10,6 +11,7 @@ export default function Document() {
         if(routerAsPath != '/'){ pathToRoot += '../'; }
     }
     const staticStylesCss = pathToRoot+'static-styles.css';
+    */
     return (
         <Html>
             <Head>
