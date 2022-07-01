@@ -102,14 +102,19 @@ export default function Layout({ children, home, siteTitle }: any) {
 
             <footer className="footer has-text-centered">
                 <div className="is-size-6 color-text-screen">
-                    FOOTER
-                    <Image
-                        priority
-                        src="/images/logo-github-black.svg"
-                        height={60}
-                        width={60}
-                        alt="Github"
-                    />
+                    <Link
+                        href='https://github.com/qbreis/nextjs-blog'
+                    >
+                        <a>
+                            <Image
+                                priority
+                                src="/images/logo-github-black.svg"
+                                height={60}
+                                width={60}
+                                alt="Github"
+                            />
+                        </a>
+                    </Link>
                 </div>
             </footer>
 
