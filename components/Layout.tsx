@@ -2,6 +2,7 @@ import Image from 'next/image';
 import MetaData from './MetaData';
 import Link from 'next/link';
 import { useEffect, useRef } from "react";
+import Footer from './Footer';
 
 export default function Layout({ children, home, siteTitle }: any) {
 
@@ -99,25 +100,6 @@ export default function Layout({ children, home, siteTitle }: any) {
                 )}
             </header>
             <main className="site-main">{children}</main>
-
-            <footer className="footer has-text-centered">
-                <div className="is-size-6 color-text-screen">
-                    <Link
-                        href='https://github.com/qbreis/nextjs-blog'
-                    >
-                        <a>
-                            <Image
-                                priority
-                                src="/images/logo-github-black.svg"
-                                height={60}
-                                width={60}
-                                alt="Github"
-                            />
-                        </a>
-                    </Link>
-                </div>
-            </footer>
-
             {!home && (
                 <div>
                     <Link href="/">
@@ -125,6 +107,7 @@ export default function Layout({ children, home, siteTitle }: any) {
                     </Link>
                 </div>
             )}
+            <Footer />
         </div>
     );
 }
