@@ -21,7 +21,7 @@ export default function Home({ allPostsData }: any) {
         <Layout home siteTitle={nextConfig.siteTitle}>
             <MetaData />
             <section>
-                <h2 className="h1">En primera persona</h2>
+                <h2 className="h1">Playing code</h2>
                 <div className="entry-meta">
 				    <span className="posted-on">
                         <time className="entry-date published">2022-06-08</time>

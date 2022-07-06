@@ -2,6 +2,7 @@ import Image from 'next/image';
 import MetaData from './MetaData';
 import Link from 'next/link';
 import { useEffect, useRef } from "react";
+import Footer from './Footer';
 
 export default function Layout({ children, home, siteTitle }: any) {
 
@@ -106,6 +107,7 @@ export default function Layout({ children, home, siteTitle }: any) {
                     </Link>
                 </div>
             )}
+            <Footer />
         </div>
     );
 }
