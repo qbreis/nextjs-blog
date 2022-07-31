@@ -7,9 +7,9 @@ tags: ['dos', 'tres']
 repository: 'https://github.com/qbreis/blog/tree/dev-chapter-1-setup'
 draft: true
 ---
-I want to use for my work environment the [Mise en place](https://github.com/isfegu/misenplace.node) proposed by [isfegu](https://github.com/isfegu).
+I want to use for my work environment the <a href="https://github.com/isfegu/misenplace.node" target="_blank" rel="nofollow noreferrer">Mise en place</a> proposed by <a href="https://github.com/isfegu" target="_blank" rel="nofollow noreferrer">isfegu</a>.
 
-<a href="https://github.com/isfegu" target="_blank" rel="nofollow noreferrer">isfegu</a>
+
 
 [isfegu](https://github.com/isfegu){:target="_blank"}
 
