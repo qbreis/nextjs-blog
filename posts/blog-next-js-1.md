@@ -7,8 +7,8 @@ tags: ['dos', 'tres']
 repository: 'https://github.com/qbreis/blog/tree/dev-chapter-1-setup'
 draft: true
 ---
-# Blog - Next.js - Chapter #1 - Setup
- 
+I want to use for my work environment the [https://github.com/isfegu/misenplace.node](Mise en place) proposed by [https://github.com/isfegu](isfegu).
+
 I will start more or less following documentation in [https://nextjs.org/learn](https://nextjs.org/learn).
  
 ## 1.1 Create Next App
