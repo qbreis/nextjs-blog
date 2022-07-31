@@ -1,38 +1,34 @@
 ---
-title: 'Hola world'
-excerpt: 'Excerpt test for hola mundo'
-date: '2022-06-01'
+title: 'Blog - Next.js - Chapter #1 - Setup'
+excerpt: 'In this chapter I just setup new Next.js app from scratch using Typescript and Sass, apart from establishing a hierarchical criteria for some general styles. So I can use it in the future as a boilerplate for any website based on Next.js.'
+date: '2021-07-31'
 categories: ['nextjs', 'bulma', 'test']
 tags: ['dos', 'tres']
+repository: 'https://github.com/qbreis/blog/tree/dev-chapter-1-setup'
 draft: true
 ---
-
-Testing pre code in blog:
-
-```bash[class="line-numbers"][data-line="2,4"]
-yarn add bulma
-yarn add bulma
-<span class="z">yarn add bulma</span>
-yarn add bulma
+# Blog - Next.js - Chapter #1 - Setup
+ 
+I will start more or less following documentation in [https://nextjs.org/learn](https://nextjs.org/learn).
+ 
+## 1.1 Create Next App
+ 
+I open terminal, `cd` into the directory I want to create the app in, and run the following command:
+ 
+```bash[class="line-numbers"][class="contained"][class="hide-numbers"]
+yarn create next-app --typescript blog
 ```
-yarn add bulma
-```bash
-yarn add bulma
-yarn add bulma
-```
+ 
+In this case I want to use typescript and the name for the app will be just blog.
 
-```js[class="line-numbers"][class="hide-numbers"][data-line="2,4"]
-const hola = 'world';
-https://css-tricks.com/syntax-highlighting-prism-on-a-next-js-site/
-There’s a Prism.js line-highlight plugin; unfortunately, it is not integrated with remark-prism. The plugin works by analyzing the formatted code’s position in the DOM, and manually highlights lines based on that information. That’s impossible with the remark-prism plugin since there is no DOM at the time the plugin runs. This is, after all, static site generation. Next.js is running our Markdown through a build step and generating HTML to render the blog. All of this Prism.js code runs during this static site generation, when there is no DOM.
-yarn add bulma
-yarn add bulma
-yarn add bulma
-yarn add bulma
-yarn add bulma
-yarn add bulma
 
-```
+
+
+
+
+
+
+
 
 ```js[class="line-numbers"][class="hide-numbers"][data-line="2,4"]
 const Home: NextPage = () => {
