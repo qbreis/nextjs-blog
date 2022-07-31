@@ -7,7 +7,12 @@ tags: ['dos', 'tres']
 repository: 'https://github.com/qbreis/blog/tree/dev-chapter-1-setup'
 draft: true
 ---
-I want to use for my work environment the [https://github.com/isfegu/misenplace.node](Mise en place) proposed by [https://github.com/isfegu](isfegu).
+I want to use for my work environment the [Mise en place](https://github.com/isfegu/misenplace.node) proposed by [isfegu](https://github.com/isfegu).
+
+<a href="https://github.com/isfegu" target="_blank" rel="nofollow noreferrer">isfegu</a>
+
+[isfegu](https://github.com/isfegu){:target="_blank"}
+
 
 I will start more or less following documentation in [https://nextjs.org/learn](https://nextjs.org/learn).
  
