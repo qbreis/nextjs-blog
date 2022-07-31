@@ -7,35 +7,26 @@ tags: ['dos', 'tres']
 repository: 'https://github.com/qbreis/blog/tree/dev-chapter-1-setup'
 draft: true
 ---
-I want to use for my work environment the <a href="https://github.com/isfegu/misenplace.node" target="_blank" rel="nofollow noreferrer">Mise en place</a> proposed by <a href="https://github.com/isfegu" target="_blank" rel="nofollow noreferrer">isfegu</a>.
-
 ## 1.1 Setting up my work env
+
+I want to use for my work environment the <a href="https://github.com/isfegu/misenplace.node" target="_blank" rel="nofollow noreferrer">Mise en place</a> proposed by <a href="https://github.com/isfegu" target="_blank" rel="nofollow noreferrer">isfegu</a>.
 
 I go to <a href="https://github.com/isfegu/misenplace.node" target="_blank" rel="nofollow noreferrer">Mise en place</a> and I choose to download repo into local new empty folder `misenplace.node-main`.
 
-Open folder `misenplace.node-main` in Visual Studio Code using the remote container and I install dependencies by running for the first time:
+I open folder `misenplace.node-main` in Visual Studio Code using the remote container and I install dependencies by running for the first time:
 
 ```bash[class="line-numbers"][class="contained"][class="hide-numbers"]
 node ➜ /workspaces/misenplace.node-main $ yarn
 ```
 
+## 1.2 Create Next.js App
 
-
-
-
+I will start more or less following documentation in <a href="https://nextjs.org/learn" target="_blank" rel="nofollow noreferrer">https://nextjs.org/learn</a>, so I run:
 
 ```bash[class="line-numbers"][class="contained"][class="hide-numbers"]
 node ➜ /workspaces/misenplace.node-main $ yarn create next-app --typescript blog
 ```
 
-I will start more or less following documentation in [https://nextjs.org/learn](https://nextjs.org/learn).
- 
-## 1.1 Create Next App
- 
-I open terminal, `cd` into the directory I want to create the app in, and run the following command:
- 
-```bash[class="line-numbers"][class="contained"][class="hide-numbers"]
-yarn create next-app --typescript blog
-```
- 
 In this case I want to use typescript and the name for the app will be just blog.
+
+ 
