@@ -9,10 +9,24 @@ draft: true
 ---
 I want to use for my work environment the <a href="https://github.com/isfegu/misenplace.node" target="_blank" rel="nofollow noreferrer">Mise en place</a> proposed by <a href="https://github.com/isfegu" target="_blank" rel="nofollow noreferrer">isfegu</a>.
 
+## 1.1 Setting up my work env
+
+I go to <a href="https://github.com/isfegu/misenplace.node" target="_blank" rel="nofollow noreferrer">Mise en place</a> and I choose to download repo into local new empty folder `misenplace.node-main`.
+
+Open folder `misenplace.node-main` in Visual Studio Code using the remote container and I install dependencies by running for the first time:
+
+```bash[class="line-numbers"][class="contained"][class="hide-numbers"]
+node ➜ /workspaces/misenplace.node-main $ yarn
+```
 
 
-[isfegu](https://github.com/isfegu){:target="_blank"}
 
+
+
+
+```bash[class="line-numbers"][class="contained"][class="hide-numbers"]
+node ➜ /workspaces/misenplace.node-main $ yarn create next-app --typescript blog
+```
 
 I will start more or less following documentation in [https://nextjs.org/learn](https://nextjs.org/learn).
  
