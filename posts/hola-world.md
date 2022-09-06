@@ -7,11 +7,11 @@ tags: ['dos', 'tres']
 repository: 'https://github.com/qbreis/blog/tree/dev-chapter-1-setup'
 draft: true
 ---
-# Blog - Next.js - Chapter #1 - Setup
+# Blog - Next.js - Chapter #1 - Setup..
  
 I will start more or less following documentation in [https://nextjs.org/learn](https://nextjs.org/learn).
  
-## 1.1 Create Next App
+## 1.1 Create Next App..
  
 I open terminal, `cd` into the directory I want to create the app in, and run the following command:
  
