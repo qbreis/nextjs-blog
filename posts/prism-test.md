@@ -27,7 +27,32 @@ In this case I want to use typescript and the name for the app will be just blog
 
 
 
+```js[class="line-numbers"]
+export function getPostsPaginated(params?: any) {
+  if (!params?.limit) {
+    return posts;
+  }
+  const getPosts: any = [];
+  let counter = 0;
+  posts.map((post: any) => {
+    if (counter < params?.limit) {
+      counter++;
+      getPosts.push(post);
+    }
+  });
+  return getPosts;
+}
 
+export function getPostsPaginatedIds() {
+  return getPostsPaginated({ limit: 3 }).map((post: any) => {
+    return {
+      params: {
+        id: post.id,
+      },
+    };
+  });
+}
+```
 
 
 ```js[class="line-numbers"][class="hide-numbers"][data-line="2,4"]
